@@ -1,8 +1,14 @@
 #pragma once
 #include <string>
 #include <vector>
-
+#include <iterator>
 using namespace std;
+
+enum _sex
+{
+	male = 0,
+	female =1
+};
 
 class Slav
 {
@@ -15,7 +21,9 @@ private:
 	string _name;
 	int _id;
 
+
 public:
+
 	Slav();
 
 	static int counter() { return _counter; }
@@ -23,5 +31,6 @@ public:
 	string name() { return _name; }
 	int id() { return _id; }
 
+	int sex();
 	string description();
 };

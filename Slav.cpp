@@ -18,9 +18,20 @@ void Slav::init()
 
 Slav::Slav()
 {
-	static int amountOfNames = (init(), names.size());
+	static int amountOfNames = (init(), names.size()); 
+	/*
+	Proces nazywa się leniwą inicjalizacją, polega on na tym,że opóźnieniu tworzenia obiektu do momentu gdy bedzię on potrzebny. 
+	W tym przypadku najpierw zostanie wywołana funkcja init() a następnie zmienna statyczna amountofNames zostanie zaincjalizowana 
+	wartoscią zwróconą przez funkcję size() należącą do klasy names zostanie
+	*/
 	_name = names[rand() % amountOfNames];
 	_id = _counter++;
+}
+
+int Slav::sex()
+{
+		if(_name.back() == 'a') return female;
+		return male;
 }
 
 string Slav::description()
